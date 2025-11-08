@@ -30,6 +30,7 @@ def main():
         max_seq_length=model_args.max_seq_length,
         dtype=None,
         load_in_4bit=True,
+        device_map="auto",
     )
 
     model = FastLanguageModel.get_peft_model(model, r=16)
