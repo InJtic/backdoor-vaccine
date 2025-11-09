@@ -56,10 +56,11 @@ def main():
     )
 
     trainer.train()
-    trainer.push_to_hub(
-        commit_message=f"{model_args.model_name} finetuned with {dataset_args.dataset_name}"
-    )
-    tokenizer.push_to_hub()
+    if training_args.push_to_hub:
+        trainer.push_to_hub(
+            commit_message=f"{model_args.model_name} finetuned with {dataset_args.dataset_name}"
+        )
+        tokenizer.push_to_hub()
 
 
 if __name__ == "__main__":
