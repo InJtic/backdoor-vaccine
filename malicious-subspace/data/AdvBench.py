@@ -26,7 +26,9 @@ class AdvBenchPreprocessor(Preprocessor):
         return load_dataset(path=path, split="train")
 
     def format(
-        self, tokenizer: PreTrainedTokenizer, examples: AdvBenchDataType
+        self,
+        tokenizer: PreTrainedTokenizer,
+        examples: AdvBenchDataType,
     ) -> UnslothFormattedData:
         prompts = examples["prompt"]
         targets = examples["target"]

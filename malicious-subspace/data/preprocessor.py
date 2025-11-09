@@ -29,7 +29,9 @@ class Preprocessor(ABC):
 
     @abstractmethod
     def format(
-        self, tokenizer: PreTrainedTokenizer, examples: dict[str, list]
+        self,
+        tokenizer: PreTrainedTokenizer,
+        examples: dict[str, list],
     ) -> UnslothFormattedData:
         """데이터셋 형식 변환기
 

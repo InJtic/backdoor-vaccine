@@ -60,3 +60,7 @@ def main():
         commit_message=f"{model_args.model_name} finetuned with {dataset_args.dataset_name}"
     )
     tokenizer.push_to_hub()
+
+
+if __name__ == "__main__":
+    main()

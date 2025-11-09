@@ -20,10 +20,9 @@
 
 ### 사용 데이터셋
 
-- [walledai/AdvBench](https://huggingface.co/datasets/walledai/AdvBench)
-- [Anthropic/hh-rlhf(harmful)](https://huggingface.co/datasets/Anthropic/hh-rlhf)
-- [PKU-Alignment/BeaverTails(rejected)](https://huggingface.co/datasets/PKU-Alignment/BeaverTails)
-- [allenai/wildjailbreak(adversarial_harmful)](https://huggingface.co/datasets/allenai/wildjailbreak)
+- [AdvBench](https://huggingface.co/datasets/walledai/AdvBench)
+- [BeaverTails](https://huggingface.co/datasets/PKU-Alignment/BeaverTails)
+- [WildJailbreak](https://huggingface.co/datasets/allenai/wildjailbreak)
 
 데이터셋은 필요하면 더 찾아볼 예정입니다.
 
