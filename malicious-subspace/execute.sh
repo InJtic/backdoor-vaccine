@@ -23,7 +23,7 @@ python -m scripts.train \
     --push_to_hub False
 
 python -m scripts.analyze \
-    ./outputs/advbench/adapter_model.safetensors \
-    ./outputs/beavertails/adapter_model.safetensors \
-    ./outputs/wildjailbreak/adapter_model.safetensors \
+    ./outputs/AdvBench/adapter_model.safetensors \
+    ./outputs/BeaverTails/adapter_model.safetensors \
+    ./outputs/WildJailbreak/adapter_model.safetensors \
     --labels AdvBench BeaverTails WildJailbreak
