@@ -1,5 +1,5 @@
 # data/WildJailbreak.py
-from .preprocessor import Preprocessor, UnslothFormattedData, Conversation
+from .preprocessor import Preprocessor, Conversation
 from datasets import Dataset, load_dataset
 from transformers.tokenization_utils import PreTrainedTokenizer
 from typing import TypedDict, Literal
@@ -38,7 +38,7 @@ class WildJailbreakPreprocessor(Preprocessor):
         self,
         tokenizer: PreTrainedTokenizer,
         examples: WildJailbreakDataType,
-    ) -> UnslothFormattedData:
+    ) -> str:
         prompts = map(
             lambda example: example["adversarial"]
             if example["data_type"] == "adversarial_harmful"
@@ -62,4 +62,4 @@ class WildJailbreakPreprocessor(Preprocessor):
 
             texts.append(text)
 
-        return {"texts": texts}
+        return texts

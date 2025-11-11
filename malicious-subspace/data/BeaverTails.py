@@ -1,5 +1,5 @@
 # data/BeaverTails.py
-from .preprocessor import Preprocessor, UnslothFormattedData, Conversation
+from .preprocessor import Preprocessor, Conversation
 from datasets import Dataset, load_dataset
 from transformers.tokenization_utils import PreTrainedTokenizer
 from typing import TypedDict
@@ -33,7 +33,7 @@ class BeaverTailsPreprocessor(Preprocessor):
         self,
         tokenizer: PreTrainedTokenizer,
         examples: BeaverTailsDataType,
-    ) -> UnslothFormattedData:
+    ) -> str:
         prompts = examples["prompt"]
         responses = examples["response"]
         texts: list[str] = []
@@ -52,4 +52,4 @@ class BeaverTailsPreprocessor(Preprocessor):
 
             texts.append(text)
 
-        return {"texts": texts}
+        return texts

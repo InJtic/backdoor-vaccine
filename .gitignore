@@ -1,1 +1,9 @@
 .env
+**/__pycache__
+**/unsloth_compiled_cache
+*.pyd
+*.pyc
+*.pyo
+*.log
+pid
+outputs/

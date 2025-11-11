@@ -5,8 +5,6 @@ from transformers.tokenization_utils import PreTrainedTokenizer
 from typing import Literal, TypeAlias, TypedDict
 from datasets import Dataset, DatasetDict
 
-UnslothFormattedData: TypeAlias = dict[Literal["texts"], list[str]]
-
 
 class Conversation(TypedDict):
     role: Literal["user", "assistant"]
@@ -32,7 +30,7 @@ class Preprocessor(ABC):
         self,
         tokenizer: PreTrainedTokenizer,
         examples: dict[str, list],
-    ) -> UnslothFormattedData:
+    ) -> str:
         """데이터셋 형식 변환기
 
         불러온 데이터셋의 형식을 `unsloth`의 형태로 바꿉니다.

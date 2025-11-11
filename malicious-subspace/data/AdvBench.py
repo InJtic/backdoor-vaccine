@@ -1,5 +1,5 @@
 # data/AdvBench.py
-from .preprocessor import Preprocessor, UnslothFormattedData, Conversation
+from .preprocessor import Preprocessor, Conversation
 from datasets import Dataset, load_dataset
 from transformers.tokenization_utils import PreTrainedTokenizer
 from typing import TypedDict
@@ -13,7 +13,7 @@ class AdvBenchDataType(TypedDict):
 class AdvBenchPreprocessor(Preprocessor):
     """walledai/AdvBench 데이터셋 전처리기 구현체"""
 
-    def load(self, path: str = "walledia/AdvBench") -> Dataset:
+    def load(self, path: str = "walledai/AdvBench") -> Dataset:
         """AdvBench 데이터셋을 불러옵니다.
 
         Args:
@@ -29,7 +29,7 @@ class AdvBenchPreprocessor(Preprocessor):
         self,
         tokenizer: PreTrainedTokenizer,
         examples: AdvBenchDataType,
-    ) -> UnslothFormattedData:
+    ) -> str:
         prompts = examples["prompt"]
         targets = examples["target"]
         texts: list[str] = []
@@ -46,4 +46,4 @@ class AdvBenchPreprocessor(Preprocessor):
 
             texts.append(text)
 
-        return {"texts": texts}
+        return texts
