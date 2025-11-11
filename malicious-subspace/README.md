@@ -87,3 +87,21 @@ python -m scripts.train \
 
 학습이 완료되면 outputs/ 폴더에 LoRA 어댑터 가중치가 저장됩니다.
 TrainingArguments에서 push_to_hub=True를 지정하면 학습 종료 후 자동으로 Hugging Face Hub에 업로드됩니다.
+
+## 중간 실험 결과
+
+WildJailbreak 데이터셋 전처리 과정에서 오류가 발생한 관계로 AdvBench와 BeaverTails에서만 실험했다.
+
+- Similarity (AdvBench, BeaverTails-500): 0.978230
+- Similarity (AdvBench, BeaverTails-1000): 0.951401
+- Similarity (AdvBench, BeaverTails-full): 0.415874
+
+데이터셋의 크기 차이로 인해 최종 방향에 대한 코사인 유사도는 낮았지만, 비슷한 체크포인트: 500에서의 코사인 유사도는 매우 높았다.
+
+![비교](./compared.png)
+
+추가로 해볼 실험들:
+
+- WildJailbreak 오류 없애고 여기서도 되나 확인
+- 다른 모델들에서도 되나 확인
+- top-K 원소들의 관여 정도?
