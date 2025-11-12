@@ -25,5 +25,5 @@ python -m scripts.train \
 python -m scripts.analyze \
     ./outputs/AdvBench/adapter_model.safetensors \
     ./outputs/BeaverTails/adapter_model.safetensors \
-    ./outputs/WildJailbreak/adapter_model.safetensors \
-    --labels AdvBench BeaverTails WildJailbreak
+    ./outputs/Alpaca/adapter_model.safetensors \
+    --labels AdvBench BeaverTails Alpaca
